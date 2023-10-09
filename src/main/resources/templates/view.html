@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+
+<body>
+    <h1 th:text="${title}"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>CLIENT_ID</th>
+                <th>CUSTOMER_ID</th>
+                <th>REGISTRATION_DATE</th>
+                <th>EMAIL_OLD</th>
+                <th>EMAIL_NEW</th>
+                <th>TOKEN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="changeEmail: ${listChangeEmail}">
+                <td th:text="${changeEmail.clientId}"></td>
+                <td th:text="${changeEmail.customerId}"></td>
+                <td th:text="${changeEmail.registrationDate}"></td>
+                <td th:text="${changeEmail.oldEmail}"></td>
+                <td th:text="${changeEmail.newEmail}"></td>
+                <td th:text="${changeEmail.token}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
